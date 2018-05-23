@@ -18,4 +18,4 @@ To replicate our simulation experiment, you have to run the [simulations.R](R-Co
 
 License
 =======
-This replication package as well as the CrossPare software that is used are licensed under the Apache License, Version 2.0. 
+This replication package is used are licensed under the Apache License, Version 2.0. 
