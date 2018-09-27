@@ -16,7 +16,7 @@ Through the issueSHARK, we get the issues, most importantly their IDs, their typ
 
 # Step 3: Link commits to issues
 
-We used the [linkSHARK](https://github.com/smartshark/linkSHARK) to create links between issues and commits based on the commit message. The README of the linkSHARK describes how the tool can be [installed](https://github.com/smartshark/linkSHARK#install) and how [links can be created for a project](). 
+We used the [linkSHARK](https://github.com/smartshark/linkSHARK) to create links between issues and commits based on the commit message. The README of the linkSHARK describes how the tool can be [installed](https://github.com/smartshark/linkSHARK#install) and how [links can be created for a project](https://github.com/smartshark/linkSHARK#execution-for-smartshark). 
 
 We use a regular expression to identify candidate terms in commit messages for issue links: 
 ```
@@ -26,7 +26,7 @@ We use a regular expression to identify candidate terms in commit messages for i
 We then check for each matched term, if we find an issue with a matching id. If we find the issue, we create the link. The linkSHARK can deal with broken links through typos or otherwise wrong usage of the issue IDs, to improve the issue linking. To following broken links were fixed for the projects in our case study. 
 
 | Project | Correct Key | Broken Keys |
----------------------------------------
+|---------|-------------|-------------|
 | zeppelin | ZEPPELIN | ZPPELIN,ZZEPPELIN,ZEPPELING,ZPEPELIN,ZEPELIN,ZEP,ZEPPEILN |
 | falcon | FALCON | FACLON,FACON |
 | nutch | NUTCH | NJTCH,NUTH,UTCH |
@@ -46,7 +46,7 @@ We are interested in the issueonly_bugfix label that the labelSHARK generates. T
 
 # Step 5: Get the size of files
 
-We used the [mecoSHARK](https://github.com/smartshark/mecoSHARK) to collect software metrics, because we required the lines of code to allow simulations of the size-aware cost model. The README of the mecoSHARK descibes how the tool can be (installed)[https://github.com/smartshark/mecoSHARK#installation] and how [metric data can be collected for a project](https://github.com/smartshark/mecoSHARK#tutorial)
+We used the [mecoSHARK](https://github.com/smartshark/mecoSHARK) to collect software metrics, because we required the lines of code to allow simulations of the size-aware cost model. The README of the mecoSHARK descibes how the tool can be [installed](https://github.com/smartshark/mecoSHARK#installation) and how [metric data can be collected for a project](https://github.com/smartshark/mecoSHARK#tutorial).
 
 # Step 6: Extract CSV files from the database
 
