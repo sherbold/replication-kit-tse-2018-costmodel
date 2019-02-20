@@ -16,7 +16,7 @@ This archive contains:
 
 How does it work?
 =================
-To replicate our simulation experiment, you have to run the [simulations.R](R-Code/simulations.R) script contained within the R-Code folder. The only manual intervention required is the adoption of the directories, where the data is located and where the plots should be generated to. These should be set to the location of the replication kit in your local environment. 
+To replicate our simulation experiment, you have to run the [simulation.R](R-Code/simulation.R) script contained within the R-Code folder. The only manual intervention required is the adoption of the directories, where the data is located and where the plots should be generated to. These should be set to the location of the replication kit in your local environment. 
 
 License
 =======
