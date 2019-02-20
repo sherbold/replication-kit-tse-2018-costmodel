@@ -44,10 +44,38 @@ We are interested in the issueonly_bugfix label that the labelSHARK generates. T
 - The status of the issue was closed or resolved at any point in its history.
 - The issue resolution is FIXED.
 
+# Step 5: Validation of issue types
+
+For all issues for which we identified that more than five files were changed, we manually validate the bug label. This way, we determined 21 issues were mislabelled as bug, which we ignored for the subsequent analysis:
+
+|Issue ID|Reason|
+|--------|------|
+| CAY-2287 | fix mixed with a major new feature, nearly all changes new feature |
+| MATH-1284 | architecture improvement |
+| FALCON-298 | incorrectly referenced by 33 commits |
+| FALCON-2097 | incorrectly referenced by 33 commits |
+| KAFKA-4481 | new feature |
+| KAFKA-4857 | new feature |
+| KAFKA-4714 | new feature |
+| KAFKA-5995 | new feature |
+| KAFKA-4796 | findbugs warnings |
+| KAFKA-4894 | findbugs warnings |
+| KAFKA-5265 | refactoring |
+| KAFKA-4826 | findbugs warnings |
+| KAFKA-5043 | new feature |
+| KAFKA-4995 | findbugs warnings |
+| STORM-2678 | new feature |
+| STORM-2845 | remove feature |
+| STORM-1997 | new feature |
+| TEZ-3744 | findbugs warnings |
+| TEZ-3611 | new feature |
+| ZEPPELIN-2197 | new feature |
+| ZEPPELIN-3090 | new feature |
+
 # Step 5: Get the size of files
 
 We used the [mecoSHARK](https://github.com/smartshark/mecoSHARK) to collect software metrics, because we required the lines of code to allow simulations of the size-aware cost model. The README of the mecoSHARK descibes how the tool can be [installed](https://github.com/smartshark/mecoSHARK#installation) and how [metric data can be collected for a project](https://github.com/smartshark/mecoSHARK#tutorial).
 
 # Step 6: Extract CSV files from the database
 
-We wrote a [python script](generate_csvfiles.py) that uses the collected data and creates the CSV files we use from the case study. The script traverses the main branch of each project and collects the latest commit for each project in the year 2017. For this commit, the JAVA files are collected from the database. These files are the foundation of the defect data set, and the lines in the CSV files. We then traverse all commits for the project from the year 2017 and identify the bugfixing commit. For each bugfixing commit that actually touched a JAVA file, we added a column to the CSV file, which contains a 1 for each file that was changed during a bugfix, and 0 for each file that was not touched. This is similar to a standard SZZ approach, except that we do not look into the past to determine when the bug was introduced and, thereby, try to create a defect prediction data set for concrete revision.
+We wrote a [python script](generate_csvfiles.py) that uses the collected data and creates the CSV files we use from the case study. The script traverses the main branch of each project and collects the latest commit for each project in the year 2017. For this commit, the JAVA files are collected from the database. These files are the foundation of the defect data set, and the lines in the CSV files. We then traverse all commits for the project from the year 2017 and identify the bugfixing commits. For each bugfixing commit that actually touched a JAVA file, and the change to the JAVA file was not only whitepace or comment, we added a column to the CSV file with the issue ID of the issues that are referenced by the commit. The column contains a 1 for each file that was changed during a bugfix (excluding comments, whitespaces), and 0 for each file that was not touched. This is similar to a standard SZZ approach, except that we do not look into the past to determine when the bug was introduced and, thereby, try to create a defect prediction data set for concrete revision.
