@@ -12,7 +12,7 @@ parameters.plotpath = "~/replication-kit-tse-2018-costmodel/result-plots/"
 
 parameters.expectedAccuracy = 1:19*5/100
 parameters.pqf = 0:5/10
-parameters.iterations = 2
+parameters.iterations = 100
 
 
 # Define if the actual values are shown as scatterplot or if only trend lines should be shown
@@ -24,7 +24,6 @@ parameters.title = FALSE
 
 # files with defect data that are used for the simulation
 parameters.filenames = c(paste(parameters.filepath,"archiva.csv", sep=""),
-                         paste(parameters.filepath,"calcite.csv", sep=""),
                          paste(parameters.filepath,"cayenne.csv", sep=""),
                          paste(parameters.filepath,"commons-math.csv", sep=""),
                          paste(parameters.filepath,"deltaspike.csv", sep=""),
@@ -59,26 +58,6 @@ library(xtable)
 ########################################################################
 # Functions used for the simulation of results and plotting of results #
 ########################################################################
-
-# loads data and simulates a defect prediction with an expected accuracy
-#simulationRunRealData = function(filename, expectedAccuracy) {
-#  simdata = transpose(read.csv(filename, header=TRUE, row.names=1))
-#  colBugsStart = 1
-#  colBugsEnd = ncol(simdata)
-#  simdata$hasBug = rowSums(simdata)>0
-#  simdata$numBugs = rowSums(simdata)
-#  
-#  simdata$correct = rbern(nrow(dat), expectedAccuracy)
- # for( j in 1:nrow(simdata) ) {
- #   if( simdata$correct[j]==1 ) {
- ##     simdata$pred[j] = simdata$hasBug[j]
-#    } else {
-#      simdata$pred[j] = !simdata$hasBug[j]
-#    }
- # }
- # 
- ## return(simdata)
-#}
 
 # simulates a defect prediction model with an expected accuracy
 simulatePrediction = function(dat, expectedAccuracy) {
@@ -378,6 +357,7 @@ for( i in 1:length(parameters.filenames)) {
                            withTitle = parameters.title,
                            metric="precision")
   plotAll = ggarrange(plotRecall, plotPrecision, ncol=2, nrow=1, legend="none")
+  plotAll = annotate_figure(plotAll, top=text_grob("constant quality assurance costs", size=14))
   
   ggsave(filename=paste(parameters.plotpath, projectName,"_", p.qf, "_const.png", sep=""), plot=plotAll,
          width = 10, height = 3.5, dpi = 150, units = "in")
@@ -409,7 +389,7 @@ for( i in 1:length(parameters.filenames)) {
                               withTitle = parameters.title,
                               metric="precision")
   plotAll = ggarrange(plotRecall, plotPrecision, ncol=2, nrow=1, legend="none")
-  
+  plotAll = annotate_figure(plotAll, top=text_grob("size-aware quality assurance costs", size=14))
   
   ggsave(filename=paste(parameters.plotpath, projectName,"_", p.qf, "_size.png", sep=""), plot=plotAll,
          width = 10, height = 3.5, dpi = 150, units = "in")
