@@ -1,4 +1,4 @@
-,LLOC,MRM-1945,MRM-1940,MRM-1933,MRM-1859
+,LLOC,MRM-1945,MRM-1859,MRM-1940,MRM-1933
 archiva-modules/archiva-base/archiva-repository-api/src/main/java/org/apache/archiva/indexer/ArchivaIndexingContext.java,25,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-api/src/main/java/org/apache/archiva/indexer/ArchivaIndexManager.java,14,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-api/src/main/java/org/apache/archiva/indexer/GenericIndexManager.java,32,0,0,0,0
@@ -110,7 +110,7 @@ archiva-modules/archiva-web/archiva-rest/archiva-rest-services/src/main/java/org
 archiva-modules/archiva-web/archiva-rest/archiva-rest-services/src/main/java/org/apache/archiva/rest/services/DefaultProxyConnectorRuleService.java,102,0,0,0,0
 archiva-modules/archiva-web/archiva-rest/archiva-rest-services/src/main/java/org/apache/archiva/rest/services/DefaultProxyConnectorService.java,138,0,0,0,0
 archiva-modules/archiva-web/archiva-rest/archiva-rest-services/src/main/java/org/apache/archiva/rest/services/DefaultRedbackRuntimeConfigurationService.java,309,0,0,0,0
-archiva-modules/archiva-web/archiva-rest/archiva-rest-services/src/main/java/org/apache/archiva/rest/services/DefaultRemoteRepositoriesService.java,158,0,1,1,0
+archiva-modules/archiva-web/archiva-rest/archiva-rest-services/src/main/java/org/apache/archiva/rest/services/DefaultRemoteRepositoriesService.java,158,0,0,1,1
 archiva-modules/archiva-web/archiva-rest/archiva-rest-services/src/main/java/org/apache/archiva/rest/services/DefaultReportRepositoriesService.java,138,0,0,0,0
 archiva-modules/archiva-web/archiva-rest/archiva-rest-services/src/main/java/org/apache/archiva/rest/services/DefaultRepositoriesService.java,976,0,0,0,0
 archiva-modules/archiva-web/archiva-rest/archiva-rest-services/src/main/java/org/apache/archiva/rest/services/DefaultRepositoryGroupService.java,127,0,0,0,0
@@ -330,7 +330,7 @@ archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-a
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-api/src/main/java/org/apache/archiva/admin/model/beans/ProxyConnectorRule.java,91,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-api/src/main/java/org/apache/archiva/admin/model/beans/ProxyConnectorRuleType.java,27,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-api/src/main/java/org/apache/archiva/admin/model/beans/RedbackRuntimeConfiguration.java,131,0,0,0,0
-archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-api/src/main/java/org/apache/archiva/admin/model/beans/RemoteRepository.java,248,0,1,1,0
+archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-api/src/main/java/org/apache/archiva/admin/model/beans/RemoteRepository.java,248,0,0,1,1
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-api/src/main/java/org/apache/archiva/admin/model/beans/RepositoryGroup.java,121,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-api/src/main/java/org/apache/archiva/admin/model/beans/UiConfiguration.java,67,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-api/src/main/java/org/apache/archiva/admin/model/group/RepositoryGroupAdmin.java,32,0,0,0,0
@@ -353,7 +353,7 @@ archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-d
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-default/src/main/java/org/apache/archiva/admin/repository/proxyconnector/DefaultProxyConnectorAdmin.java,192,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-default/src/main/java/org/apache/archiva/admin/repository/proxyconnector/ProxyConnectorOrderComparator.java,37,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-default/src/main/java/org/apache/archiva/admin/repository/proxyconnectorrule/DefaultProxyConnectorRuleAdmin.java,134,0,0,0,0
-archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-default/src/main/java/org/apache/archiva/admin/repository/remote/DefaultRemoteRepositoryAdmin.java,299,0,0,1,0
+archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-default/src/main/java/org/apache/archiva/admin/repository/remote/DefaultRemoteRepositoryAdmin.java,299,0,0,0,1
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-default/src/main/java/org/apache/archiva/admin/repository/runtime/DefaultArchivaRuntimeConfigurationAdmin.java,150,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-default/src/main/java/org/apache/archiva/admin/repository/runtime/DefaultRedbackRuntimeConfigurationAdmin.java,588,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-admin/archiva-repository-admin-default/src/main/java/org/apache/archiva/admin/repository/utils/RepositoryComparator.java,24,0,0,0,0
@@ -383,7 +383,7 @@ archiva-modules/plugins/maven2-repository/src/main/java/org/apache/archiva/metad
 archiva-modules/plugins/maven2-repository/src/main/java/org/apache/archiva/metadata/repository/storage/maven2/DefaultArtifactMappingProvider.java,51,0,0,0,0
 archiva-modules/plugins/maven2-repository/src/main/java/org/apache/archiva/metadata/repository/storage/maven2/DummyLifecycleBindingsInjector.java,13,0,0,0,0
 archiva-modules/plugins/maven2-repository/src/main/java/org/apache/archiva/metadata/repository/storage/maven2/Maven2RepositoryPathTranslator.java,248,0,0,0,0
-archiva-modules/plugins/maven2-repository/src/main/java/org/apache/archiva/metadata/repository/storage/maven2/Maven2RepositoryStorage.java,863,0,0,0,1
+archiva-modules/plugins/maven2-repository/src/main/java/org/apache/archiva/metadata/repository/storage/maven2/Maven2RepositoryStorage.java,863,0,1,0,0
 archiva-modules/plugins/maven2-repository/src/main/java/org/apache/archiva/metadata/repository/storage/maven2/MavenArtifactFacetFactory.java,20,0,0,0,0
 archiva-modules/plugins/maven2-repository/src/main/java/org/apache/archiva/metadata/repository/storage/maven2/MavenProjectFacet.java,120,0,0,0,0
 archiva-modules/plugins/maven2-repository/src/main/java/org/apache/archiva/metadata/repository/storage/maven2/MavenProjectFacetFactory.java,19,0,0,0,0
@@ -492,7 +492,7 @@ archiva-modules/archiva-scheduler/archiva-scheduler-repository-api/src/main/java
 archiva-cli/src/main/java/org/apache/archiva/cli/AbstractProgressConsumer.java,50,0,0,0,0
 archiva-cli/src/main/java/org/apache/archiva/cli/ArtifactCountConsumer.java,52,0,0,0,0
 archiva-modules/archiva-base/archiva-configuration/src/main/java/org/apache/archiva/configuration/ArchivaConfiguration.java,24,0,0,0,0
-archiva-modules/archiva-base/archiva-configuration/src/main/java/org/apache/archiva/configuration/DefaultArchivaConfiguration.java,778,0,0,1,0
+archiva-modules/archiva-base/archiva-configuration/src/main/java/org/apache/archiva/configuration/DefaultArchivaConfiguration.java,778,0,0,0,1
 archiva-modules/archiva-base/archiva-repository-api/src/main/java/org/apache/archiva/repository/Repository.java,27,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-layer/src/main/java/org/apache/archiva/repository/AbstractManagedRepository.java,60,0,0,0,0
 archiva-modules/archiva-base/archiva-repository-layer/src/main/java/org/apache/archiva/repository/AbstractRemoteRepository.java,104,0,0,0,0
