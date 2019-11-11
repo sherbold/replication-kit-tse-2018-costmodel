@@ -1,6 +1,6 @@
 Introduction
 ============
-Within this archive you find the replication package for the paper "On the costs and return on investment of software defect prediction" by Steffen Herbold which is currently under review. The aim of this replication package is to allow other researchers to replicate our results with minimal effort. 
+Within this archive you find the replication package for the paper "On the costs and return on investment of software defect prediction" by Steffen Herbold. The aim of this replication package is to allow other researchers to replicate our results with minimal effort. 
 
 Requirements
 ============
